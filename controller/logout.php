@@ -1,0 +1,10 @@
+<?php
+    session_start();
+    unset($_SESSION["username"]);
+    unset($_SESSION["name"]);
+    unset($_SESSION["email"]);
+    unset($_SESSION["access"]);
+    unset($_SESSION["hod"]);
+    unset($_SESSION["role"]);
+    header("Location:../view/login.php");
+?>
