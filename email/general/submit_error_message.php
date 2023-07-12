@@ -45,7 +45,7 @@
     <img src="../../src/img/error.png" alt="error graphic" style="width:500px;height:400px;">
   </div>
   <div class="container">
-    <a href="http://192.168.1.235:8088/ncmr_test/view/form.php" class="try-again-button">Try Again</a>
+    <a href="http://192.168.1.235:8088/ncmr/view/form.php" class="try-again-button">Try Again</a>
   </div>
 </body>
 </html>

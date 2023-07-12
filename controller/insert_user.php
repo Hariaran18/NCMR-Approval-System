@@ -25,14 +25,14 @@
                             . "Good day. Your account has been registered successfully. Below is your account details:-  " . "\n"
                             . "\n" . "Username = " . $username . "  "
                             . "\n" . "Password = " . $password2 . "\n"
-                            . "\n" . "Please visit to the E-NCMR System at http://192.168.1.235:8088/ncmr_test. You can change your password under Name > Profile which located at top right side of the page."
+                            . "\n" . "Please visit to the E-NCMR System at http://192.168.1.235:8088/ncmr. You can change your password under Name > Profile which located at top right side of the page."
                             . "\n\n" . "Thank you.";
 
-            $headers = "From: test@test.com";
+            $headers = "From: autonav@wenteleng.com";
 
             if($_POST){
                 ini_set("SMTP","test-com.mail.protection.outlook.com");
-                ini_set("smtp_port","00");
+                ini_set("smtp_port","25");
                 ini_set("auth_username" , "test@test.com");
                 ini_set("auth_password" , "test1234");
                 ini_set("sendmail_from" , "test@test.com");

@@ -92,7 +92,6 @@
     $comments3 = $selassoc['comments3'];
     $comments4 = $selassoc['comments4'];
     $comments5 = $selassoc['comments5'];
-    $comments6 = $selassoc['comments6'];
     $witnessed_by = $selassoc['witnessed_by'];
     $witnessed_date = $selassoc['witnessed_date'];
     $remark4 = $selassoc['remark4'];
@@ -133,16 +132,6 @@
   </head>
 
   <body>
-      <script type="text/javascript">
-      function validate()
-      {
-	    if(document.getElementById('job_no').value=='')
-            {
-	        alert('Please fill up the JOB NO!! ');
-	        return false;
-            }
-        }
-    </script>
     <script src="../src/bootstrap/jquery-3.1.1.min.js"></script>
     <br>
     <div class="container">
@@ -871,8 +860,6 @@
                 }?>
               <input type="text" class="form-control" value="<?php echo $value; ?>" readonly>
               <?php } ?>
-              <label class="font-weight-bold">Comments</label>
-              <textarea class="form-control" id="comments6" name="comments6" readonly><?php echo $comments6; ?></textarea>
             
             </div>
           </div>
@@ -889,21 +876,7 @@
             <button class="btn btn-lg btn-secondary" onclick="window.print()">
               <i class="fas fa-print"></i> Print
             </button>
-          </div>&nbsp;
-          <div>
-            <form action="../QRCode/" method="post" target="_blank">
-            <input type="hidden" class="form-control" id="ncmr_no" name="ncmr_no" readonly value="<?php echo $ncmr_no; ?>">
-            <input type="hidden" class="form-control" id="job_no" name="job_no" readonly value="<?php echo $job_no; ?>">
-            <input type="hidden" class="form-control" id="part_no" name="part_no" readonly value="<?php echo $part_no; ?>">
-            <input type="hidden" class="form-control" id="issue_date" name="issue_date" readonly value="<?php echo $issue_date; ?>">
-            <input type="hidden" class="form-control" id="nc_qty" name="nc_qty" readonly value="<?php echo $nc_qty; ?>">
-            <input type="hidden" class="form-control" id="defect_desc" name="defect_desc" readonly value="<?php echo $defect_desc; ?>">
-            <input type="hidden" class="form-control" id="issued_name" name="issued_name" readonly value="<?php echo $issued_name; ?>">
-
-            <button class="btn btn-lg btn-secondary" type="submit" name="submit" onclick="return validate()">PRINT KITTING LIST</button>
-            </form>
           </div>
-
         </div>
     </div>
     <br>

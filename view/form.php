@@ -768,7 +768,7 @@
 
           <div class="row gy-5">
             <div class="p-3 border bg-light form-group col-md-4 card">
-              <label class="font-weight-bold">Finance <span style="color:red">*</span></label>
+              <label class="font-weight-bold">Finance</label>
               <select class="form-control" name="finance_name" id="finance_name">
                 <option></option>
                 <?php while($row21 = mysqli_fetch_array($finance)):; ?>
@@ -776,6 +776,8 @@
                 <?php endwhile;?>
               </select>
               <input type="text" class="form-control" id="finance_date" name="finance_date" readonly></input>
+              <label class="font-weight-bold">Comments</label>
+              <textarea class="form-control" id="comments6" name="comments6" readonly></textarea>
             </div>
           </div>
 
@@ -901,13 +903,13 @@
             document.getElementById('prod_mng').setAttribute('required', 'required');
             document.getElementById('qa_mng').setAttribute('required', 'required');
             document.getElementById('dgm_gm').setAttribute('required', 'required');
-            document.getElementById('finance_name').setAttribute('required', 'required');
+            // document.getElementById('finance_name').setAttribute('required', 'required');
           } else {
             document.getElementById("write_off_form").style.display = "none";
             document.getElementById('prod_mng').removeAttribute('required');
             document.getElementById('qa_mng').removeAttribute('required');
             document.getElementById('dgm_gm').removeAttribute('required');
-            document.getElementById('finance_name').removeAttribute('required');
+            // document.getElementById('finance_name').removeAttribute('required');
           }
         }
         else{

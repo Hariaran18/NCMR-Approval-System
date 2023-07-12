@@ -229,7 +229,7 @@
             $txt        =   "Hi, " . "\n\n"
                             . "Good day. New NCMR Form no : ".$ncmr_no." has been created by " . $issued_name . "."
                             . "\n" . "This form has been sent to Apporval process."
-                            . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
             $to2        =   $form_ack_email;
@@ -237,14 +237,14 @@
             $txt2       =   "Hi, " . $ack_name . "\n\n"
                             . "Good day. The NCMR Form no : ".$ncmr_no." has been Created by " . $issued_name . "."
                             . "\n" . "This form is waiting for your Approval to proceed further."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
-            $headers = "From: test@test.com";
+            $headers = "From: autonav@wenteleng.com";
 
             if($_POST){
                 ini_set("SMTP","test-com.mail.protection.outlook.com");
-                ini_set("smtp_port","00");
+                ini_set("smtp_port","25");
                 ini_set("auth_username" , "test@test.com");
                 ini_set("auth_password" , "test1234");
                 ini_set("sendmail_from" , "test@test.com");
@@ -261,7 +261,7 @@
         else {
             include("../email/insert/create_form_fail.php");
 ?>
-            <meta http-equiv="refresh" content="5; url=http://192.168.1.235:8088/ncmr_test/list_view_pending.php"/>
+            <meta http-equiv="refresh" content="5; url=http://192.168.1.235:8088/ncmr/list_view_pending.php"/>
 <?php
         }
 

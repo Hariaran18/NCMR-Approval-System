@@ -49,35 +49,35 @@
 
             //Notify via email
             $to1        =   $review_email;
-            $subject1   =   "TESTING E-NCMR Form No ".$ncmr_no." has been Approved.";
+            $subject1   =   "E-NCMR Form No ".$ncmr_no." has been Approved.";
             $txt1       =   "Hi, ".$review_name."\n\n"
-                            ."Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Successfully Approved."
+                            ."Good day. The E-NCMR Form no : ".$ncmr_no." has been Successfully Approved."
                             ."\n" . "This form has been sent to next apporval process."
-                            . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
                             
             $to2        =   $production_email;
-            $subject2   =   "TESTING E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
+            $subject2   =   "E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
             $txt2       =   "Hi, ".$prod_mng."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Reviewed & Approved by ".$review_name."."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Reviewed & Approved by ".$review_name."."
                             ."\n" . "This form is waiting for your Approval to proceed further."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
             //If completed
             $to4        =   $form_issue_email;
-            $subject4  =   "TESTING E-NCMR Form No ".$ncmr_no." is waiting to be CLOSED.";
+            $subject4  =   "E-NCMR Form No ".$ncmr_no." is waiting to be CLOSED.";
             $txt4       =   "Hi, ".$issued_name."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Approved by ".$review_name."."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Approved by ".$review_name."."
                             . "\n" . "Please CLOSE the form as soon as possible."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
-            $headers    =   "From: test@test.com";
+            $headers    =   "From: autonav@wenteleng.com";
 
             if($_POST){
                 ini_set("SMTP","test-com.mail.protection.outlook.com");
-                ini_set("smtp_port","00");
+                ini_set("smtp_port","25");
                 ini_set("auth_username" , "test@test.com");
                 ini_set("auth_password" , "test1234");
                 ini_set("sendmail_from" , "test@test.com");

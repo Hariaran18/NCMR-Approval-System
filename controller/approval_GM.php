@@ -45,42 +45,42 @@
 
             ///Notify via email
             $to2        =   $dgm_gm_email;
-            $subject2   =   "TESTING E-NCMR Form No ".$ncmr_no." has been Approved.";
+            $subject2   =   "E-NCMR Form No ".$ncmr_no." has been Approved.";
             $txt2       =   "Hi, ".$dgm_gm."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Successfully Approved."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Successfully Approved."
                             . "\n" . "This form has been sent to next apporval process."
-                            . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
             $to5        =   $logistic_email;
-            $subject5   =   "TESTING E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
+            $subject5   =   "E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
             $txt5       =   "Hi, ".$logistic_usr."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Approved by ".$dgm_gm."."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Approved by ".$dgm_gm."."
                             ."\n" . "This form is waiting for your Approval to proceed further."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
             $to6        =   $safety_email;
-            $subject6   =   "TESTING E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
+            $subject6   =   "E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
             $txt6       =   "Hi, ".$safety_usr."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Approved by ".$dgm_gm."."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Approved by ".$dgm_gm."."
                             ."\n" . "This form is waiting for your Approval to proceed further."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
             $to7        =   $form_issue_email;
-            $subject7   =   "TESTING E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
+            $subject7   =   "E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
             $txt7       =   "Hi, ".$issued_name."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Approved by ".$dgm_gm."."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Approved by ".$dgm_gm."."
                             ."\n" . "This form is waiting for your Approval to proceed further."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
-            $headers = "From: test@test.com";
+            $headers = "From: autonav@wenteleng.com";
 
             if($_POST){
                 ini_set("SMTP","test-com.mail.protection.outlook.com");
-                ini_set("smtp_port","00");
+                ini_set("smtp_port","25");
                 ini_set("auth_username" , "test@test.com");
                 ini_set("auth_password" , "test1234");
                 ini_set("sendmail_from" , "test@test.com");

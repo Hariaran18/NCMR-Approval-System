@@ -38,18 +38,18 @@
 
             //Notify via email
             $to = $form_issue_email . ", " .  $form_notify_email . "," . $form_ack_email . "," . $review_email . "," .  $form_notify_email2 . ", " .  $form_notify_email3 . ", " .  $form_notify_email4;
-            $subject = "TESTING E-NCMR Form No ".$ncmr_no." REJECTED!.";
+            $subject = "E-NCMR Form No ".$ncmr_no." REJECTED!.";
             $txt =  "Hi," . "\n\n"
-                    . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been REJECTED by ".$review_name."."
+                    . "Good day. The E-NCMR Form no : ".$ncmr_no." has been REJECTED by ".$review_name."."
                     ."\n" . "This form status has been set to REJECTED."
-                    . "\n" . "For further information, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                    . "\n" . "For further information, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                     . "\n\n" . "Thank you.";
 
-            $headers = "From: test@test.com";
+            $headers = "From: autonav@wenteleng.com";
 
             if($_POST){
                 ini_set("SMTP","test-com.mail.protection.outlook.com");
-                ini_set("smtp_port","00");
+                ini_set("smtp_port","25");
                 ini_set("auth_username" , "test@test.com");
                 ini_set("auth_password" , "test1234");
                 ini_set("sendmail_from" , "test@test.com");

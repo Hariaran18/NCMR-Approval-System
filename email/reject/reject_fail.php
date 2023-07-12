@@ -64,7 +64,7 @@
         document.getElementById("countdown").innerHTML = count - 1;
       } else {
         clearInterval(counter);
-        window.location.href = "http://192.168.1.235:8088/ncmr_test/view/approval_list.php";
+        window.location.href = "http://192.168.1.235:8088/ncmr/view/approval_list.php";
       }
     }
     // Run countdown every second

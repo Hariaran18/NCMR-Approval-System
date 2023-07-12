@@ -8,6 +8,7 @@
         $today = date('Y-m-d');
 
         $ncmr_no = $_POST['ncmr_no'];
+        $comments6 = $_POST['comments6'];
         $finance_date = $today;
         $form_state = $f_complete;
         $finance_name = $_SESSION['name']; 
@@ -15,6 +16,7 @@
         $approve_sql = "UPDATE form SET 
                         finance_date='$finance_date',
                         form_state='$form_state',
+                        comments6='$comments6',
                         closed_date='$today'
                         
                         WHERE `ncmr_no`= '$ncmr_no'";
@@ -29,26 +31,26 @@
 
             //Notify via email
             $to        =   $form_finance_email;
-            $subject  =   "TESTING E-NCMR Form No ".$ncmr_no." is set to 'COMPLETED' Status.";
+            $subject  =   "E-NCMR Form No ".$ncmr_no." is set to 'COMPLETED' Status.";
             $txt       =   "Hi, ".$finance_name."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Approved."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Approved."
                             . "\n" . "This form is waiting to be closed by Issuer."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
             $to2        =   $form_issue_email;
-            $subject2  =   "TESTING E-NCMR Form No ".$ncmr_no." is waiting to be CLOSED.";
+            $subject2  =   "E-NCMR Form No ".$ncmr_no." is waiting to be CLOSED.";
             $txt2       =   "Hi, ".$issuer_name."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Approved by ".$finance_name."."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Approved by ".$finance_name."."
                             . "\n" . "Please CLOSE the form as soon as possible."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
-            $headers = "From: test@test.com";
+            $headers = "From: autonav@wenteleng.com";
 
             if($_POST){
                 ini_set("SMTP","test-com.mail.protection.outlook.com");
-                ini_set("smtp_port","00");
+                ini_set("smtp_port","25");
                 ini_set("auth_username" , "test@test.com");
                 ini_set("auth_password" , "test1234");
                 ini_set("sendmail_from" , "test@test.com");

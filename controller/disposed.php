@@ -56,31 +56,32 @@
 
             //Notify via email
             $to        =   $witnessed_email;
-            $subject  =   "TESTING E-NCMR Form No ".$ncmr_no." has been Approved.";
+            $subject  =   "E-NCMR Form No ".$ncmr_no." has been Approved.";
             $txt       =   "Hi, ".$witnessed_by."\n\n"
-                        . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Successfully Approved."
+                        . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Successfully Approved."
                         . "\n" . "This form has been sent to next apporval process."
-                        . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                        . "\n" . "To check the status of this form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                         . "\n\n" . "Thank you.";
 
             $to2        =   $form_finance_email;
-            $subject2  =   "TESTING E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
+            $subject2  =   "E-NCMR Form No ".$ncmr_no." is waiting for your Approval.";
             $txt2       =   "Hi, ".$finance_name."\n\n"
-                            . "Good day. The TESTING NCMR Form no : ".$ncmr_no." has been Approved by ".$witnessed_by."."
+                            . "Good day. The E-NCMR Form no : ".$ncmr_no." has been Approved by ".$witnessed_by."."
                             ."\n" . "This form is waiting for your Approval to proceed further."
-                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr_test."
+                            . "\n" . "To check the form, please visit the E-NCMR System at http://192.168.1.235:8088/ncmr."
                             . "\n\n" . "Thank you.";
 
-            $headers = "From: test@test.com";
+            $headers = "From: autonav@wenteleng.com";
 
             if($_POST){
                 ini_set("SMTP","test-com.mail.protection.outlook.com");
-                ini_set("smtp_port","00");
+                ini_set("smtp_port","25");
                 ini_set("auth_username" , "test@test.com");
                 ini_set("auth_password" , "test1234");
                 ini_set("sendmail_from" , "test@test.com");
 
                 mail($to,$subject,$txt,$headers);
+                mail($to2,$subject2,$txt2,$headers);
             }
 
             include("../email/approve/approve_success.php");

@@ -92,6 +92,7 @@
     $comments3 = $selassoc['comments3'];
     $comments4 = $selassoc['comments4'];
     $comments5 = $selassoc['comments5'];
+    $comments6 = $selassoc['comments6'];
     $witnessed_by = $selassoc['witnessed_by'];
     $witnessed_date = $selassoc['witnessed_date'];
     $remark4 = $selassoc['remark4'];
@@ -884,7 +885,8 @@
                 }?>
               <input type="text" class="form-control" value="<?php echo $value; ?>" readonly>
               <?php } ?>
-
+                <label class="font-weight-bold">Comments</label>
+                <textarea class="form-control" id="comments6" name="comments6" readonly><?php echo $comments6; ?></textarea>
               </div>
             </div>
             <div class="row">

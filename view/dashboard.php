@@ -129,16 +129,23 @@
          array(
             'label' => 'Number of Records',
             'data' => array(),
-            'backgroundColor' => array('#CB4335', '#1F618D', '#F1C40F', '#27AE60', '#884EA0','#E67E22','#3498DB','#16A085','8E44AD'),
+            'backgroundColor' => array(),
             'borderWidth' => 1
          )
       )
    );
 
+   // Function to generate random colors
+   function generateRandomColor(){
+      $color = '#'.str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
+      return $color;
+   }
+
    // Loop through the result set and store the data in the array
    while ($row3 = mysqli_fetch_assoc($result3)) {
       $chart_data3['labels'][] = $row3['detected_at'];
       $chart_data3['datasets'][0]['data'][] = $row3['total'];
+      $chart_data3['datasets'][0]['backgroundColor'][] = generateRandomColor();
    }
 
    // Set chart options
@@ -158,7 +165,7 @@
             array(
                'ticks' => array(
                   'beginAtZero' => true,
-                  'stepSize' => 1
+                  'stepSize' => 10
                )
             )
          )
@@ -187,8 +194,8 @@
    <body>
       <br>
       <div class="container-fluid pt-3">
-         <div class="row row-cols-md-4 g-3">
-            <div class="col mb-3">
+         <div class="row row-cols-md-3 g-3">
+            <div class="col mb-4">
                <div class="card text-white bg-success">
                   <div class="card-body text-center">
                      <p class="card-text" style="font-size:68px;"><b><?php echo $c_completed; ?></b></p>
@@ -196,7 +203,7 @@
                   <h5 class="card-footer text-center"><i class="fa fa-check-circle"></i>    COMPLETED</h5>
                </div>
             </div>
-            <div class="col mb-3">
+            <div class="col mb-4">
                <div class="card text-white bg-warning">
                   <div class="card-body text-center">
                      <p class="card-text" style="font-size:68px;"><b><?php echo $c_pending; ?></b></p>
@@ -204,15 +211,15 @@
                   <h5 class="card-footer text-center"><i class="fa fa-clock"></i>    PENDING</h5>
                </div>
             </div>
-            <div class="col mb-3">
+            <!-- <div class="col mb-3">
                <div class="card text-white bg-danger">
                   <div class="card-body text-center">
                      <p class="card-text" style="font-size:68px;"><b><?php echo $c_rejected; ?></b></p>
                   </div>
                   <h5 class="card-footer text-center"><i class="fa fa-times-circle"></i>    REJECTED</h5>
                </div>
-            </div>
-            <div class="col mb-3">
+            </div> -->
+            <div class="col mb-4">
                <div class="card text-white bg-info">
                   <div class="card-body text-center">
                      <p class="card-text" style="font-size:68px;"><b><?php echo $c_wo; ?></b></p>
